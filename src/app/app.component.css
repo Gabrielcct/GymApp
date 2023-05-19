@@ -1,0 +1,11 @@
+header {
+  margin-bottom: 150px;
+}
+
+footer {
+  margin-top: 150px;
+}
+
+.is-active {
+  background-color: brown;
+}

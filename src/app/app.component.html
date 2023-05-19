@@ -1,0 +1,38 @@
+<div class="d-flex flex-column">
+  <header class="d-flex flex-row justify-content-between">
+    <div class="font-18 logo">GymFit</div>
+    <div class="user">GE</div>
+  </header>
+
+  <router-outlet></router-outlet>
+
+  <footer class="d-flex flex-row align-items-center">
+    <a
+      class="btn btn-primary"
+      [routerLink]="['/workout']"
+      [routerLinkActive]="['is-active']"
+    >
+      Workout
+    </a>
+    <a
+      class="btn btn-primary"
+      [routerLink]="['/saved']"
+      [routerLinkActive]="['is-active']"
+      >Saved</a
+    >
+    <a
+      class="btn btn-primary"
+      [routerLink]="['/progress']"
+      [routerLinkActive]="['is-active']"
+    >
+      Progress
+    </a>
+    <a
+      class="btn btn-primary"
+      [routerLink]="['/settings']"
+      [routerLinkActive]="['is-active']"
+    >
+      Settings
+    </a>
+  </footer>
+</div>
