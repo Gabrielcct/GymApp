@@ -1,8 +1,9 @@
 p {
   font-size: 20px;
-  margin-bottom: 250px;
-  margin-top: 250px;
+  margin-bottom: 40px;
+  margin-top: 60px;
 }
 
-button {
+.saved-workouts-actions {
+  margin-top: 150px;
 }

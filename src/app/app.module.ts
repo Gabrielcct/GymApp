@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SavedComponent } from './saved/saved.component';
 import { WorkoutComponent } from './workout/workout.component';
-import { ProgressComponent } from './progress/progress.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SavedWorkoutsComponent } from './saved/saved-workouts/saved-workouts.component';
 import { ExercisesComponent } from './workout/exercises/exercises.component';
@@ -17,7 +16,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     SavedComponent,
     WorkoutComponent,
-    ProgressComponent,
     SettingsComponent,
     SavedWorkoutsComponent,
     ExercisesComponent,

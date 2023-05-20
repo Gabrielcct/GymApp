@@ -1,38 +1,65 @@
 <div class="d-flex flex-column">
-  <header class="d-flex flex-row justify-content-between">
-    <div class="font-18 logo">GymFit</div>
+  <header class="d-flex flex-row justify-content-between align-items-center">
+    <div class="logo">GymFit</div>
     <div class="user">GE</div>
   </header>
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary"
+    style="background-color: #e3f2fd"
+  >
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul
+          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+          style="--bs-scroll-height: 100px"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/workout']"
+              [routerLinkActive]="['is-active']"
+            >
+              Workout
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/saved']"
+              [routerLinkActive]="['is-active']"
+              >Saved</a
+            >
+          </li>
 
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/settings']"
+              [routerLinkActive]="['is-active']"
+            >
+              Settings
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <router-outlet></router-outlet>
 
-  <footer class="d-flex flex-row align-items-center">
-    <a
-      class="btn btn-primary"
-      [routerLink]="['/workout']"
-      [routerLinkActive]="['is-active']"
-    >
-      Workout
-    </a>
-    <a
-      class="btn btn-primary"
-      [routerLink]="['/saved']"
-      [routerLinkActive]="['is-active']"
-      >Saved</a
-    >
-    <a
-      class="btn btn-primary"
-      [routerLink]="['/progress']"
-      [routerLinkActive]="['is-active']"
-    >
-      Progress
-    </a>
-    <a
-      class="btn btn-primary"
-      [routerLink]="['/settings']"
-      [routerLinkActive]="['is-active']"
-    >
-      Settings
-    </a>
+  <div class="actions d-flex flex-row align-items-center"></div>
+  <footer class="d-flex flex-column align-items-center justify-content-center">
+    <span>Copyright: Gabriel Eugenio Silva & Victor Silva </span>
+    <span>2023</span>
   </footer>
 </div>

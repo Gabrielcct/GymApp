@@ -1,9 +1,21 @@
 <div class="d-flex flex-column align-items-center">
-  <p *ngIf="workoutService.savedWorkouts.length === 0">No saved workouts</p>
-
+  <h2>Saved Workouts</h2>
+  <div
+    *ngIf="workoutService.savedWorkouts.length === 0"
+    class="no-saved d-flex flex-column align-items-center"
+  >
+    <p *ngIf="workoutService.savedWorkouts.length === 0">No saved workouts</p>
+    <button class="btn btn-success" (click)="navigateTo()">
+      Add Your First Workout
+    </button>
+    <p>Or</p>
+    <button class="btn btn-light" (click)="importWorkouts()">
+      Import Workouts
+    </button>
+  </div>
   <div
     *ngIf="workoutService.savedWorkouts.length > 0"
-    class="saved workouts d-flex flex-column align-items-center"
+    class="saved-workouts d-flex flex-column align-items-center"
   >
     <button
       *ngFor="let workout of workoutService.savedWorkouts"
@@ -12,5 +24,33 @@
       {{ workout.name }}
     </button>
   </div>
-  <button class="btn btn-primary" (click)="navigateTo()">Add Workout</button>
+
+  <div
+    *ngIf="workoutService.savedWorkouts.length > 0"
+    class="saved-workouts-actions d-flex flex-row align-items-center justify-content-center w-100"
+  >
+    <button class="btn btn-dark mr-60" (click)="navigateTo()">
+      Add New Workout
+    </button>
+    <button class="btn btn-light mr-60" (click)="saveWorkouts()">
+      Save Workouts
+    </button>
+    <button class="btn btn-light" (click)="importWorkouts()">
+      Import Workouts
+    </button>
+  </div>
+
+  <div *ngIf="isImport" class="d-flex flex-row justify-content-between mt-40">
+    <input
+      class="mb-15"
+      type="file"
+      (change)="fileChanged($event)"
+      (click)="displayLoading($event)"
+    />
+
+    <button type="button" class="btn btn-primary" (click)="uploadDocument()">
+      Upload File
+    </button>
+  </div>
+  <p *ngIf="isLoading">Loading file ... Please Waite</p>
 </div>
