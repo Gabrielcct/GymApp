@@ -1,21 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-enum EXCERCISES_TYPE {
-  chest,
-  back,
-  legs,
-}
-
-class Excercise {
-  public id: string;
-  public name: string;
-  public type: EXCERCISES_TYPE;
-
-  constructor(id: string, name: string, type: EXCERCISES_TYPE) {
-    this.id = id;
-    this.name = name;
-    this.type = type;
-  }
-}
+import { WorkoutService } from '../workout.service';
+import { Router } from '@angular/router';
+import { EXCERCISES_TYPE, Excercise } from './excercise.class';
 
 @Component({
   selector: 'app-exercises',
@@ -24,14 +10,17 @@ class Excercise {
 })
 export class ExercisesComponent implements OnInit {
   public exercises: Array<any> = [];
-  constructor() {}
+  constructor(private workoutService: WorkoutService, private router: Router) {}
 
   ngOnInit() {
     this.exercises = this.createExercises();
     console.log(this.exercises);
   }
 
-  addExcercises(item: any): void {}
+  addExcercises(item: any): void {
+    this.workoutService.addExcercises(item);
+    this.router.navigate(['workout']);
+  }
 
   createExercises(): Array<any> {
     return [

@@ -18,6 +18,7 @@
 
       <ul>
         <li
+          class="list"
           *ngFor="let item of excerciseTypes.exercises"
           (click)="addExcercises(item)"
         >
@@ -25,21 +26,5 @@
         </li>
       </ul>
     </div>
-    <!--<table class="table">
-      <thead>
-        <tr>
-          <th scope="col" *ngFor="let excerciseTypes of exercises">
-            {{ excerciseTypes.type }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let excerciseTypes of exercises">
-          <th scope="row" *ngFor="let item of excerciseTypes">
-            {{ item.name }}
-          </th>
-        </tr>
-      </tbody>
-    </table>-->
   </div>
 </div>

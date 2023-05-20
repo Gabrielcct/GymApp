@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { WorkoutService } from '../workout/workout.service';
 
 @Component({
   selector: 'app-saved',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./saved.component.css'],
 })
 export class SavedComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public workoutService: WorkoutService) {}
 
   navigateTo(): void {
     this.router.navigate(['/workout']);

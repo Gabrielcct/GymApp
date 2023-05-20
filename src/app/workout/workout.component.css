@@ -2,6 +2,17 @@ h2 {
   margin-bottom: 100px;
 }
 
-.mr-25 {
-  margin-right: 25px;
+.workout-list {
+  min-width: 450px;
+}
+
+.workout-list:hover {
+  background-color: white !important;
+  cursor: default;
+}
+
+.warning-message {
+  color: red;
+  text-align: right;
+  font-size: 13px;
 }

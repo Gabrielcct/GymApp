@@ -1,5 +1,16 @@
 <div class="d-flex flex-column align-items-center">
-  <p>No saved workouts</p>
+  <p *ngIf="workoutService.savedWorkouts.length === 0">No saved workouts</p>
 
-  <button class="btn btn-primary" (click)="navigateTo()">Create Workout</button>
+  <div
+    *ngIf="workoutService.savedWorkouts.length > 0"
+    class="saved workouts d-flex flex-column align-items-center"
+  >
+    <button
+      *ngFor="let workout of workoutService.savedWorkouts"
+      class="btn btn-success"
+    >
+      {{ workout.name }}
+    </button>
+  </div>
+  <button class="btn btn-primary" (click)="navigateTo()">Add Workout</button>
 </div>

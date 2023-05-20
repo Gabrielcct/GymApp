@@ -10,6 +10,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { SavedWorkoutsComponent } from './saved/saved-workouts/saved-workouts.component';
 import { ExercisesComponent } from './workout/exercises/exercises.component';
 import { SetsComponent } from './workout/sets/sets.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,10 @@ import { SetsComponent } from './workout/sets/sets.component';
     SettingsComponent,
     SavedWorkoutsComponent,
     ExercisesComponent,
-    SetsComponent
+    SetsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
