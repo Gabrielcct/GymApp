@@ -42,7 +42,24 @@
   margin-top: 40px;
 }
 
+.ml-15 {
+  margin-left: 15px;
+}
+
 h2 {
   margin-bottom: 80px !important;
   margin-top: 30px !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.workout-list {
+  min-width: 450px;
+}
+
+.workout-list:hover {
+  background-color: white !important;
+  cursor: default;
 }

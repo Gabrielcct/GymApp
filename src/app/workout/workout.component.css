@@ -1,12 +1,3 @@
-.workout-list {
-  min-width: 450px;
-}
-
-.workout-list:hover {
-  background-color: white !important;
-  cursor: default;
-}
-
 .warning-message {
   color: red;
   text-align: right;

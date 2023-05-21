@@ -7,3 +7,7 @@ p {
 .saved-workouts-actions {
   margin-top: 150px;
 }
+
+.workout-button {
+  width: 280px;
+}

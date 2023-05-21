@@ -12,9 +12,16 @@
         required
       />
       <span
-        *ngIf="workoutService.currentWorkoutName.length === 0"
+        *ngIf="
+          workoutService.currentWorkoutName.length === 0 ||
+          workoutService.excercises.length === 0
+        "
         class="warning-message"
-        >Workout name is required</span
+        >{{
+          workoutService.currentWorkoutName.length === 0
+            ? "Workout name is required"
+            : "Add at least one excercise to save"
+        }}</span
       >
     </div>
   </div>
@@ -56,7 +63,10 @@
       </button>
       <button
         class="btn btn-success"
-        [disabled]="workoutService.currentWorkoutName.length === 0"
+        [disabled]="
+          workoutService.currentWorkoutName.length === 0 &&
+          workoutService.excercises.length > 0
+        "
         (click)="saveWorkout()"
       >
         Save Workout

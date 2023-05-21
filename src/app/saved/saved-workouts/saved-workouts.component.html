@@ -1,1 +1,88 @@
-<p>saved-workouts works!</p>
+<div class="d-flex flex-column align-items-center pl-25 pr-25">
+  <h2>{{ workout?.name }}</h2>
+
+  <div class="excercises-list-wrapper d-flex flex-column align-items-center">
+    <ul *ngIf="workout?.excercises">
+      <!-- for each excercise-->
+      <li
+        *ngFor="let excercise of workout?.excercises"
+        class="d-flex flex-column list workout-list"
+      >
+        <!-- excercises name and add set-->
+        <div class="d-flex flex-row justify-content-between mb-15">
+          <span
+            ><b>{{ excercise.name }}</b></span
+          >
+        </div>
+        <!-- list of sets-->
+        <div class="d-flex flex-row w-100" *ngIf="excercise?.sets?.length">
+          <ul class="w-100" *ngIf="excercise?.sets">
+            <li
+              *ngFor="let set of excercise.sets"
+              class="d-flex flex-row justify-content-between mb-15"
+            >
+              <div>
+                <span>{{ set.weight.value }} kg </span>
+                <span class="pl-15 pr-15"> - </span>
+                <span> {{ set.reps.value }} reps</span>
+              </div>
+              <button
+                *ngIf="isWorkout && !set.isDone"
+                class="btn btn-danger"
+                (click)="setDone(set)"
+              >
+                Did It
+              </button>
+              <button
+                *ngIf="isWorkout && set.isDone"
+                class="btn btn-sucess"
+                (click)="unsetDone(set)"
+              >
+                &#10004;
+              </button>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button
+    *ngIf="!isWorkout"
+    class="btn btn-success mb-15"
+    (click)="startWorkout()"
+  >
+    Start Workout
+  </button>
+  <button
+    *ngIf="isWorkout"
+    class="btn btn-success mb-15"
+    (click)="finishWorkout()"
+  >
+    Finish Workout
+  </button>
+  <div
+    *ngIf="isWorkout"
+    class="d-flex flex-column justify-content-center align-items-center workout-list"
+  >
+    <h5 class="mb-15">Workout time</h5>
+    <div
+      class="d-flex flex-row justify-content-center align-items-center mb-15"
+    >
+      <p class="mb-15 no-margin-bottom">{{ display }}</p>
+      <button
+        class="btn btn-light ml-15"
+        (click)="startTimer()"
+        [disabled]="!isPaused"
+      >
+        Start timer
+      </button>
+      <button
+        class="btn btn-danger ml-15"
+        (click)="pauseTimer()"
+        [disabled]="isPaused"
+      >
+        Pause
+      </button>
+    </div>
+  </div>
+</div>

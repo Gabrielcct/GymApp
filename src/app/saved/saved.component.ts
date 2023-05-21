@@ -8,13 +8,16 @@ import { WorkoutService } from '../workout/workout.service';
   styleUrls: ['./saved.component.css'],
 })
 export class SavedComponent {
-  file: any;
+  file: any = null;
   btnText: string = 'Import Workouts';
   isImport: boolean = false;
   isLoading: boolean = false;
   constructor(private router: Router, public workoutService: WorkoutService) {}
 
   navigateTo(): void {
+    this.workoutService.currentWorkoutName = '';
+    this.workoutService.excercises = [];
+    this.workoutService.currentExcercise = null;
     this.router.navigate(['/workout']);
   }
 
@@ -55,5 +58,10 @@ export class SavedComponent {
       }
     };
     fileReader.readAsText(this.file);
+  }
+
+  goToWorkout(workout: any) {
+    this.workoutService.workout = workout;
+    this.router.navigate(['/saved-workouts']);
   }
 }

@@ -7,8 +7,8 @@ function createWindow() {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: 800,
-    height: 800,
+    width: 1000,
+    height: 1080,
     backgroundColor: "#ffffff",
     show: false,
     webPreferences: {

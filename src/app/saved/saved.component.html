@@ -19,7 +19,8 @@
   >
     <button
       *ngFor="let workout of workoutService.savedWorkouts"
-      class="btn btn-success"
+      class="btn btn-warning mb-15 workout-button"
+      (click)="goToWorkout(workout)"
     >
       {{ workout.name }}
     </button>
@@ -33,7 +34,7 @@
       Add New Workout
     </button>
     <button class="btn btn-light mr-60" (click)="saveWorkouts()">
-      Save Workouts
+      Export Workouts
     </button>
     <button class="btn btn-light" (click)="importWorkouts()">
       Import Workouts
@@ -48,9 +49,14 @@
       (click)="displayLoading($event)"
     />
 
-    <button type="button" class="btn btn-primary" (click)="uploadDocument()">
+    <button
+      *ngIf="file !== null"
+      type="button"
+      class="btn btn-dark"
+      (click)="uploadDocument()"
+    >
       Upload File
     </button>
   </div>
-  <p *ngIf="isLoading">Loading file ... Please Waite</p>
+  <p *ngIf="isLoading">Loading file ... Please Wait</p>
 </div>

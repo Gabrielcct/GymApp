@@ -12,11 +12,11 @@ export class WorkoutService {
   public currentWorkoutName: string = '';
   public savedWorkout: any;
   public savedWorkouts: Array<any> = [];
+  public workout: any;
   constructor() {}
 
   public addExcercises(excercises: any): void {
     this.excercises.push(excercises);
-    console.log(this.excercises);
   }
 
   public addSetsToExcercise(sets: Array<SetClass>) {
@@ -29,6 +29,5 @@ export class WorkoutService {
       this.excercises
     );
     this.savedWorkouts.push(this.savedWorkout);
-    console.log(this.savedWorkout);
   }
 }
