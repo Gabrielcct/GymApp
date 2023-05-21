@@ -11,6 +11,10 @@
 npm-debug.log
 yarn-error.log
 
+# Electron builds
+/gymfit-electron-win-win32-x64
+/gymfit-electron-mac-darwin-x64
+
 # IDEs and editors
 .idea/
 .project

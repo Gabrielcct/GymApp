@@ -1,6 +1,8 @@
 {
   "name": "gymfit",
-  "version": "0.0.0",
+  "author": "Victor Silva and Gabriel Eugenio Silva",
+  "license": "MIT",
+  "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -9,9 +11,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "electron": "electron .",
-    "electron-build": "ng build --configuration production && electron ."
+    "electron-build": "ng build --configuration production && electron .",
+    "electron-win": "electron-packager . --platform=win32 --arch=x64 gymfit-electron-win",
+    "electron-mac": "electron-packager . --platform=darwin --arch=x64 gymfit-electron-mac",
+    "electron-all": "electron-packager . --platform=all --arch=all gymfit-electron"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^16.0.0",
     "@angular/common": "^16.0.0",
@@ -21,8 +25,11 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "uuid": "^3.4.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
