@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WorkoutService } from '../workout/workout.service';
 
@@ -7,18 +7,26 @@ import { WorkoutService } from '../workout/workout.service';
   templateUrl: './saved.component.html',
   styleUrls: ['./saved.component.css'],
 })
-export class SavedComponent {
+export class SavedComponent implements OnInit {
   file: any = null;
   btnText: string = 'Import Workouts';
   isImport: boolean = false;
   isLoading: boolean = false;
   constructor(private router: Router, public workoutService: WorkoutService) {}
 
+  ngOnInit() {
+    this.resetCurrentWorkout();
+  }
+
   navigateTo(): void {
+    this.resetCurrentWorkout();
+    this.router.navigate(['/workout']);
+  }
+
+  resetCurrentWorkout() {
     this.workoutService.currentWorkoutName = '';
     this.workoutService.excercises = [];
     this.workoutService.currentExcercise = null;
-    this.router.navigate(['/workout']);
   }
 
   saveWorkouts() {
